@@ -17,6 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+    public const ADMIN_DASHBOARD = '/admin/dashboard';
     public const CANDIDATE_DASHBOARD = '/candidate/dashboard';
     public const COMPANY_DASHBOARD = '/company/dashboard';
 
@@ -36,6 +37,9 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            Route::middleware('web')
+                ->group(base_path('routes/admin.php'));
         });
     }
 }
