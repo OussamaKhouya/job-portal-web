@@ -7,6 +7,8 @@
 
     <title>Oficiona</title>
 
+    @notifyCss
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">
 
@@ -20,6 +22,9 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/slick.css')}}"/>
     <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.carousel.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('frontend/assets/css/jquery.nstSlider.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/html5-simple-date-input-polyfill.css')}}"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/main.css')}}">
@@ -42,6 +47,7 @@
 
 </head>
 <body>
+
 
 @include('frontend.layouts.header-2')
 
@@ -67,6 +73,10 @@
 <script src="{{asset('frontend/assets/js/tinymce.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/slick.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/jquery.ajaxchimp.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/html5-simple-date-input-polyfill.min.js')}}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 
 <script src="{{asset('frontend/js/custom.js')}}"></script>
 <script src="{{asset('frontend/dashboard/js/dashboard.js')}}"></script>
@@ -75,5 +85,19 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>
 <script src="{{asset('frontend/js/map.js')}}"></script>
+
+{{--Custom Js--}}
+
+<x-notify::notify />
+@notifyJs
+
+<script>
+    /* select2 */
+    $('.mselect2').select2({
+        closeOnSelect: false
+    });
+
+
+</script>
 </body>
 </html>
