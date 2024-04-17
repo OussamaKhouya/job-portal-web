@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Frontend\CandidateDashboardController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,9 +35,7 @@ Route::group(
     ],
     function (){
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [CandidateDashboardController::class, 'index'])->name('dashboard');
 
 });
 // company dashboard routes
