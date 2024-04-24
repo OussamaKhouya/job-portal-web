@@ -7,6 +7,8 @@
 
     <title>Oficiona</title>
 
+    @notifyCss
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">
 
@@ -71,5 +73,11 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>
 <script src="{{asset('frontend/js/map.js')}}"></script>
+
+{{--Custom Js--}}
+
+<x-notify::notify />
+@notifyJs
+
 </body>
 </html>

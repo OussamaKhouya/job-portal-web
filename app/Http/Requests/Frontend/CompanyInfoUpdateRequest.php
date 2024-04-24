@@ -4,6 +4,7 @@ namespace App\Http\Requests\Frontend;
 
 use App\Models\Company;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyInfoUpdateRequest extends FormRequest
 {
@@ -12,7 +13,7 @@ class CompanyInfoUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return Auth::check();
     }
 
     /**
